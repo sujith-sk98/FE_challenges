@@ -1,0 +1,71 @@
+.content{
+    background-color: #E6E9FB;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .ratingCard{
+        margin: auto;
+        box-shadow: 5px 5px 0px 0px #F0F2FD;
+        border-radius: 10px;
+        background-color: white;
+        padding: 2rem;
+        width: 50%;
+        max-height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2{
+            margin-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .stars{
+            margin-left: 10%;
+            i{
+                font-size: 350%;
+                margin-left: 5%;
+                color: #E6E9FB;
+                transition: transform 0.2s ease-in;
+
+                &:hover,
+                &.hovered {
+                    transform: translateY(-10px);
+                    color: #FBCD16;
+                }
+            
+            }
+        }
+        .description{
+            margin-top: 5%;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+
+    }
+}
+
+.filled{
+    color: #FBCD16 !important;
+}
+
+.halfFilled {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .halfFilled::before {
+    content: "\f005";  /* This is the Unicode for a solid star. Replace with your icon's Unicode */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: gold;  /* This will be the fill color */
+  }
+  
+  .halfFilled::after {
+    content: "\f005";  /* This should be the same as the ::before content */
+    color: #E6E9FB;  /* This will be the "empty" color */
+  }
