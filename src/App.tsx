@@ -4,7 +4,8 @@ import './App.scss';
 function App() {
 
   const challenges = [{name: 'Star Component', path: 'star'},
-    {name : 'Sortable List', path: 'sortList'}
+    {name : 'Sortable List', path: 'sortList'},
+    {name : 'Multi Step Form', path: 'multiform'},
   ]
 
   return (

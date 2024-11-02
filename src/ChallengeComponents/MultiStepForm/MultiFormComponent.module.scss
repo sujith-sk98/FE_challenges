@@ -1,0 +1,380 @@
+$primary-color: rgb(252, 107, 76);
+$secondarey-color: #f2f3e3;
+$grey-color: #E5E7EB;
+$grey-color1: #E5E7EB80;
+$grey-color2: #6B7280;
+$border-grey: #D1D5DB;
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    background-color: #f2f3e3;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        color: $grey-color2 ;
+        font-weight: 400;
+    }
+
+    .formCard {
+        background-color: rgb(255, 255, 255);
+        border-radius: 4%;
+        padding: 1.5rem 1.5rem;
+        height: fit-content;
+        max-width: 55%;
+
+        .progressBar>ul {
+            list-style-type: none;
+            padding-bottom: 1rem;
+
+            li {
+                display: inline-block;
+                background-color: $grey-color;
+                color: rgb(0, 0, 0);
+                padding: 10px 15px;
+                border-radius: 50%;
+                margin-right: 6rem;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 3.5rem;
+                    width: 55px;
+                    height: 5px;
+                    background-color: $grey-color;
+                    border-radius: 5px;
+                    transform: translateY(-50%);
+                }
+
+                @media (max-width: 605px) {
+
+                    margin-right: 1rem;
+                    padding: 2px 7px;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 1.5rem;
+                        width: 13px;
+                        height: 3px;
+                        background-color: $grey-color;
+                        border-radius: 5px;
+                        transform: translateY(-50%);
+                    }
+                }
+
+
+                @media (min-width: 605px) and (max-width: 815px) {
+
+                    margin-right: 2rem;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 2.7rem;
+                        width: 25px;
+                        height: 5px;
+                        background-color: $grey-color;
+                        border-radius: 5px;
+                        transform: translateY(-50%);
+                    }
+                }
+
+                @media (min-width: 815px) and (max-width: 1060px) {
+
+                    margin-right: 3.5rem;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 2.9rem;
+                        width: 45px;
+                        height: 5px;
+                        background-color: $grey-color;
+                        border-radius: 5px;
+                        transform: translateY(-50%);
+                    }
+
+                    &:first-child {
+                        margin-left: 1.7rem;
+                    }
+                }
+
+                &:first-child::before {
+                    display: none;
+                }
+            }
+        }
+
+        .cardForm {
+            h4 {
+                font-weight: 100;
+                color: $grey-color2;
+                margin: 0;
+            }
+
+            .firstForm {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                width: 100%;
+                padding: 1rem 0rem;
+
+                @media (max-width: 700px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        margin-bottom: 5px;
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+
+                    input {
+                        border: 2px solid $border-grey;
+                        padding: 5px;
+                        border-radius: 10px;
+                        height: 40px;
+                        box-sizing: border-box;
+                        margin-right: 1rem;
+
+                        &:focus {
+                            outline: none;
+                            border: 2px solid $primary-color !important;
+                        }
+                    }
+                }
+            }
+
+            .secondForm {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin: 1rem 0rem;
+                gap: 25px;
+                width: 100%;
+
+                @media (max-width: 700px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                div {
+                    border: 2px solid $border-grey;
+                    height: 3.2rem;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.5rem;
+                    cursor: pointer;
+                    transform: scale(1) translateY(0);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                    i {
+                        background-color: $primary-color;
+                        padding: 3px;
+                        border-radius: 50%;
+                        color: #ffffff;
+                        margin-left: 5px;
+                    }
+
+                    label {
+                        margin-right: 10px;
+                    }
+
+                    span {
+                        margin-right: auto;
+                        margin-left: 10px;
+                    }
+
+                    input[type="checkbox"] {
+                        accent-color: $primary-color;
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 15px;
+                    }
+
+                    &:hover {
+                        box-shadow: 2px 2px 5px #f98169;
+                        transform: scale(1.05) translateY(-5px);
+                        border: 2px solid $primary-color ;
+                    }
+
+                }
+
+            }
+
+            .forthStep {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin: 1rem 0rem;
+                gap: 25px;
+
+                @media (max-width: 700px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $grey-color1;
+                    padding: 16px 14px;
+                    border-radius: 5px;
+
+                    .fieldName {
+                        color: $grey-color2;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            hr {
+                margin: 2rem 0rem;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+
+                .backButton {
+                    button {
+                        color: $primary-color;
+                        background-color: #ffffff;
+                        padding: 0.6rem 1rem;
+                        border: 2px solid $primary-color;
+                        border-radius: 10px;
+                        font-weight: 500;
+                        transition: all 0.2s ease;
+                        cursor: pointer;
+
+                        &:before {
+                            content: "\f177";
+                            font-family: FontAwesome;
+                            font-size: 15px;
+                            position: absolute;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            right: 0;
+                            left: 0;
+                            top: 0;
+                            opacity: 0;
+                            height: 100%;
+                            width: 0px;
+                            transition: all 0.2s ease;
+                        }
+
+                        &:hover {
+                            box-shadow: 2px 2px 5px #f98169;
+                            transform: scale(1.05) translateY(-5px);
+                            padding-left: 35px;
+
+                            &:before {
+                                opacity: 1;
+                                width: 40px;
+                            }
+                        }
+                    }
+                }
+
+                .formButton {
+                    margin-left: auto;
+
+                    button {
+                        color: #ffffff;
+                        background-color: $primary-color;
+                        padding: 0.6rem 1rem;
+                        border: none;
+                        border-radius: 10px;
+                        transition: all 0.2s ease;
+                        overflow: hidden;
+                        position: relative;
+                        cursor: pointer;
+
+                        &:before {
+                            content: "\f178";
+                            font-family: FontAwesome;
+                            font-size: 15px;
+                            position: absolute;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            right: 0;
+                            top: 0;
+                            opacity: 0;
+                            height: 100%;
+                            width: 0px;
+                            transition: all 0.2s ease;
+                        }
+
+                        &:disabled {
+                            background-color: $grey-color;
+                        }
+
+                        &:enabled {
+                            &:hover {
+                                box-shadow: 2px 2px 5px #f98169;
+                                transform: scale(1.05) translateY(-5px);
+                                padding-right: 35px;
+
+                                &:before {
+                                    opacity: 1;
+                                    width: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .completed {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                font-size: 150px;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.active {
+    background-color: $primary-color !important;
+    color: white !important;
+
+    &::before {
+        background-color: $primary-color !important;
+    }
+}
+
+.skillActive {
+    border: 2px solid $primary-color !important;
+}
